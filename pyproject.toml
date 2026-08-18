@@ -1,0 +1,5 @@
+[project]
+name = "clinical-summary-promptflow"
+version = "0.1.0"
+description = "Structured Clinical Summarization Pipeline"
+requires-python = ">=3.10"
