@@ -42,6 +42,15 @@ Conversation Text -> Field Extraction Nodes -> Validation/Missing-Value Handling
 2. Phase 2: Build extraction nodes with missing-value handling
 3. Phase 3: Summarization node and evaluation harness
 4. Phase 4: Wire into a PromptFlow-style DAG for repeatable runs
+5. Phase 5: Testing, CI/CD, containerization, and documentation for reproducible runs
+
+## Task Tracking
+
+Work is broken into phase-tagged user stories tracked as GitHub Issues, not in this file. To see what's open:
+
+    gh issue list --repo faheemkhaskheli9/clinical-summary-promptflow --state open --label type:user-story
+
+Implement Phase 1 issues first (later phases depend on it). When you start one, add label `status:in-progress`. When you finish, close it referencing the commit (e.g. `git commit -m "... Closes #4"`) and push.
 
 ## 6. Repository Structure
 
