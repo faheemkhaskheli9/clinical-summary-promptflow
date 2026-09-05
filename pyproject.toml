@@ -3,3 +3,13 @@ name = "clinical-summary-promptflow"
 version = "0.1.0"
 description = "Structured Clinical Summarization Pipeline"
 requires-python = ">=3.10"
+dependencies = [
+    "pydantic==2.11.9",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

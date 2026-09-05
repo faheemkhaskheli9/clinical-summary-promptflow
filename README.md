@@ -4,7 +4,7 @@
 > This is an original, from-scratch build. It is not affiliated with, and does not
 > contain any code, prompts, data, or business logic from, any employer or client.
 
-![status](https://img.shields.io/badge/status-planned-lightgrey)
+![status](https://img.shields.io/badge/status-in_progress-blue)
 ![python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
@@ -95,9 +95,15 @@ No proprietary, employer-owned, or client-identifiable data is used in this proj
 
 Document the commands used to run training, ingestion, or the main pipeline, e.g.:
 
+Phase 1 includes a schema-validation CLI. It accepts synthetic JSON and prints
+the normalized vitals object:
+
 ```bash
-python -m src.main --config configs/default.yaml
+python -m clinical_summary.cli --input examples/vitals.json
 ```
+
+The command exits non-zero with a validation message for an invalid path,
+malformed JSON, or an out-of-range value.
 
 ## 10. Evaluation
 

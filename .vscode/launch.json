@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Validate synthetic vitals",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "clinical_summary.cli",
+      "args": ["--input", "${workspaceFolder}/examples/vitals.json"],
+      "cwd": "${workspaceFolder}",
+      "env": {"PYTHONPATH": "${workspaceFolder}/src"},
+      "justMyCode": true
+    }
+  ]
+}
