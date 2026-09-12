@@ -1,4 +1,34 @@
+from enum import Enum
+
 from pydantic import BaseModel, ConfigDict, Field
+
+
+class SymptomSeverity(str, Enum):
+    """Bounded severity scale for a reported symptom.
+
+    An enum (rather than free text or an unbounded int) keeps downstream
+    aggregation and evaluation comparable across extractions.
+    """
+
+    MILD = "mild"
+    MODERATE = "moderate"
+    SEVERE = "severe"
+
+
+class SymptomSchema(BaseModel):
+    """A single patient-reported symptom extracted from a conversation.
+
+    ``description`` keeps the original free-text mention for traceability;
+    ``onset``, ``severity``, and ``duration`` are the structured fields a
+    downstream summarization/evaluation node can rely on being consistent.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    description: str = Field(min_length=1)
+    onset: str | None = Field(default=None, description="When the symptom started, e.g. '3 days ago'.")
+    severity: SymptomSeverity | None = Field(default=None)
+    duration: str | None = Field(default=None, description="How long the symptom has lasted, e.g. '2 hours'.")
 
 
 class VitalsSchema(BaseModel):

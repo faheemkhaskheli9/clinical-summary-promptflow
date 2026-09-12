@@ -1,3 +1,3 @@
-from .schemas import VitalsSchema
+from .schemas import SymptomSchema, SymptomSeverity, VitalsSchema
 
-__all__ = ["VitalsSchema"]
+__all__ = ["SymptomSchema", "SymptomSeverity", "VitalsSchema"]
